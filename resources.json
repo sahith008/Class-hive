@@ -1,0 +1,30 @@
+[
+  {
+    "title": "CSA Question Bank",
+    "subject": "Computer System Architecture",
+    "semester": 4,
+    "category": "Papers",
+    "file": "pdfs/CSA -QB.pdf"
+  },
+  {
+    "title": "DBMS Question Bank",
+    "subject": "DBMS",
+    "semester": 4,
+    "category": "Papers",
+    "file": "pdfs/DBMS - QB.pdf"
+  },
+  {
+    "title": "Environment Question Bank",
+    "subject": "Environmental Studies",
+    "semester": 4,
+    "category": "Papers",
+    "file": "pdfs/Environment - QB.pdf"
+  },
+  {
+    "title": "OS Question Bank",
+    "subject": "Operating Systems",
+    "semester": 4,
+    "category": "Papers",
+    "file": "pdfs/OS - QB.pdf"
+  }
+]
