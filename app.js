@@ -1,16 +1,5 @@
 // SAMPLE DATA — real resources.json comes later
-const resources = [
-  { title: "DBMS Unit 1 Notes", subject: "DBMS", semester: 4, category: "Notes", file: "#" },
-  { title: "DBMS Unit 2 Notes", subject: "DBMS", semester: 4, category: "Notes", file: "#" },
-  { title: "DBMS 2023 Question Paper", subject: "DBMS", semester: 4, category: "Papers", file: "#" },
-  { title: "OS Full Notes", subject: "Operating Systems", semester: 4, category: "Notes", file: "#" },
-  { title: "OS Unit 3 Notes", subject: "Operating Systems", semester: 4, category: "Notes", file: "#" },
-  { title: "Data Structures Complete Notes", subject: "Data Structures", semester: 3, category: "Notes", file: "#" },
-  { title: "DS Lab Manual", subject: "Data Structures", semester: 3, category: "Lab Manual", file: "#" },
-  { title: "Maths-3 Reference Book", subject: "Mathematics III", semester: 3, category: "Books", file: "#" },
-  { title: "Digital Logic Notes", subject: "Digital Logic", semester: 3, category: "Notes", file: "#" },
-  { title: "Computer Networks Notes", subject: "Computer Networks", semester: 5, category: "Notes", file: "#" }
-];
+let resources = [];
 
 let currentSemester = null;
 let currentFilter = "All";
@@ -135,5 +124,15 @@ function goHome() {
 }
 
 // ---------- INIT ----------
-renderSemesters();
-renderRecent();
+async function init() {
+  try {
+    const res = await fetch("resources.json");
+    resources = await res.json();
+  } catch (e) {
+    console.error("Failed to load resources.json:", e);
+  }
+  renderSemesters();
+  renderRecent();
+}
+
+init();
