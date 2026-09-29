@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Hive — Shared Knowledge for Students</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo" onclick="goHome(); return false;">CLASS<span>HIVE</span></a>
+    <nav class="nav">
+      <a onclick="goHome()">Browse Subjects</a>
+      <a onclick="alert('Upload coming soon!')">Upload Content</a>
+      <a onclick="alert('Leaderboard coming soon!')">Leaderboard</a>
+    </nav>
+    <button class="btn-join" onclick="alert('Join the Hive coming soon!')">Join the Hive</button>
+  </div>
+</header>
+  <!-- HOME VIEW -->
+  <main id="homeView">
+   <section class="hero">
+  <div class="container hero-inner">
+    <h1>The Student <span class="accent">Hive</span> Mind for Shared Knowledge</h1>
+    <p>Stop studying alone. Access crowd-sourced lecture notes, exam cheat sheets,<br/>and study materials shared by top-performing students in your classes.</p>
+    <div class="hero-search">
+      <input
+        type="text"
+        id="heroSearch"
+        placeholder="Search for 'Calculus II', 'Python Basics', or course codes..."
+        onkeydown="if(event.key==='Enter') handleSearchFromHero()"
+      />
+      <button onclick="handleSearchFromHero()">Search</button>
+    </div>
+  </div>
+</section>
+
+    <section class="container section">
+      <h2>📖 Browse by Semester</h2>
+      <div class="semester-grid" id="semesterGrid"></div>
+    </section>
+
+    <section class="container section">
+      <h2>🔥 Recent Uploads</h2>
+      <div class="resource-list" id="recentList"></div>
+    </section>
+  </main>
+
+  <!-- SEMESTER VIEW -->
+  <main id="semesterView" style="display:none;">
+    <div class="container section">
+      <button class="btn-back" onclick="goHome()">← Back to Home</button>
+      <h2 id="semesterTitle">Semester</h2>
+
+      <div class="filter-tabs" id="filterTabs"></div>
+      <div id="subjectGroups"></div>
+    </div>
+  </main>
+
+  <!-- SEARCH RESULTS VIEW -->
+  <main id="searchView" style="display:none;">
+    <div class="container section">
+      <button class="btn-back" onclick="goHome()">← Back to Home</button>
+      <h2 id="searchTitle">Search Results</h2>
+      <div class="resource-list" id="searchResults"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Made with ❤️ for students</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
